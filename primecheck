@@ -1,0 +1,18 @@
+#!/bin/bash
+NUM="$1"
+if [ $(($NUM <= 1)) == 1 ]
+  then
+    echo false
+else
+  DIV=2
+  PRIME=true
+  while [ $(($NUM > $DIV)) == 1 ] && [ $(($PRIME == true)) ]
+    do
+      if [ $(($(($NUM % $DIV)) == 0)) == 1 ]
+        then
+          PRIME=false
+      fi
+      DIV=$(($DIV + 1))
+    done
+  echo $PRIME
+fi
